@@ -42,8 +42,10 @@
             margin-left: 10px; /* مسافة بين الشعار واسم الموقع */
         }
         .social-links img {
-            width: 40px; /* حجم أيقونات التواصل الاجتماعي مثل واتساب */
-            margin: 5px 0; /* مسافة بين الأيقونات */
+            width: 30px; /* حجم الأيقونات ليكون مستطيلًا صغيرًا */
+            height: 20px; /* ضبط الارتفاع */
+            margin: 5px 2px; /* مسافة بين الأيقونات */
+            border-radius: 5px; /* زوايا مستديرة للأيقونات */
         }
         .homework-img {
             display: none; /* إخفاء جميع صور الواجبات افتراضيًا */
@@ -63,14 +65,9 @@
             cursor: pointer;
         }
         .social-links-container {
-            display: none; /* إخفاء حاوية الأيقونات في البداية */
-            position: absolute;
-            top: 50px; /* تعديل الموضع حسب الحاجة */
-            right: 10px;
-            background: white;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: flex; /* استخدام flexbox لترتيب الأيقونات أفقيًا */
+            justify-content: center; /* محاذاة المركز */
+            margin-top: 20px; /* مسافة فوق الأيقونات */
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Sakkal+Majalla&display=swap" rel="stylesheet"> <!-- إضافة رابط الخط -->
@@ -80,7 +77,7 @@
 <header>
     <img src="logo.png" alt="شعار الموقع" class="logo" />
     <span class="site-name">خدمات الطلاب</span>
-    <img src="homework.png" alt="قائمة رئيسية" class="main-menu-icon" onclick="toggleSocialLinks()" />
+    <img src="menu.png" alt="قائمة رئيسية" class="main-menu-icon" onclick="toggleSocialLinks()" />
 </header>
 
 <div class="container">
@@ -134,7 +131,7 @@
     function toggleSocialLinks() {
         const socialLinksContainer = document.getElementById('socialLinks');
         if (socialLinksContainer.style.display === 'none' || socialLinksContainer.style.display === '') {
-            socialLinksContainer.style.display = 'block'; // إظهار الأيقونات
+            socialLinksContainer.style.display = 'flex'; // إظهار الأيقونات
         } else {
             socialLinksContainer.style.display = 'none'; // إخفاء الأيقونات
         }
