@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>منصة العالمية - حلول الواجبات والمشاريع الدراسية</title>
     <meta name="description" content="أفضل حلول للواجبات، الاختبارات والمشاريع الدراسية. موقع محوري لتقديم المساعدة الأكاديمية بسرعة وسهولة.">
-    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: 'Sakkal Majalla', Arial, sans-serif;
@@ -20,31 +19,12 @@
             color: #fff;
             padding: 20px 0;
         }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
         section {
             padding: 40px 20px;
             background: #fff;
             margin: 20px 0;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            background: #333;
-            color: #fff;
         }
         input, textarea {
             width: 80%;
@@ -70,19 +50,11 @@
 <body>
     <header>
         <h1>منصة العالمية - حلول الواجبات والمشاريع الدراسية</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">الرئيسية</a></li>
-                <li><a href="#about">من نحن</a></li>
-                <li><a href="#services">خدماتنا</a></li>
-                <li><a href="#contact">تواصل معنا</a></li>
-            </ul>
-        </nav>
     </header>
 
     <section id="contact">
         <h2>تواصل معنا</h2>
-        <form id="contactForm">
+        <form id="contactForm" action="https://formspree.io/f/zainabm01" method="POST">
             <input type="text" name="name" placeholder="اسمك" required>
             <input type="email" name="email" placeholder="بريدك الإلكتروني" required>
             <textarea name="message" placeholder="رسالتك" required></textarea>
@@ -93,31 +65,5 @@
     <footer>
         <p>&copy; 2024 منصة العالمية - حلول الواجبات والمشاريع الدراسية</p>
     </footer>
-
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-        (function(){
-            emailjs.init("eacbcc8ad4d64009ac3175e7e480df81"); // مفتاح النشر الخاص بك
-        })();
-
-        document.getElementById("contactForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            const name = document.querySelector('input[name="name"]').value;
-            const email = document.querySelector('input[name="email"]').value;
-            const message = document.querySelector('textarea[name="message"]').value;
-
-            emailjs.send("service_2600961317003066723", "template_ID", {
-                name: name,
-                email: email,
-                message: message
-            })
-            .then(function(response) {
-                alert("شكرًا على رسالتك! سنعود إليك قريبًا. 📬");
-            }, function(error) {
-                alert("فشل في إرسال الرسالة. حاول مرة أخرى.");
-            });
-        });
-    </script>
 </body>
 </html>
