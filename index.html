@@ -60,12 +60,17 @@
         }
         footer {
             text-align: center;
-            padding: 20px 0;
             background: #333;
             color: #fff;
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column-reverse;
         }
         .social-icons {
             margin: 10px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .social-icons a {
             margin: 0 10px;
@@ -73,8 +78,11 @@
             text-decoration: none;
         }
         .social-icons img {
-            width: 24px; /* حجم الأيقونات */
+            width: 24px;
             height: 24px;
+        }
+        .copyright {
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -117,7 +125,10 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 منصة العالمية - حلول الواجبات والمشاريع الدراسية</p>
+        <div class="copyright">
+            <p>&copy; 2024 منصة العالمية - حلول الواجبات والمشاريع الدراسية</p>
+            <p>حقوق الطبع محفوظة - حلول الواجات والمشاريع</p>
+        </div>
         <div class="social-icons">
             <a href="https://www.instagram.com" target="_blank">
                 <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="إنستغرام" />
