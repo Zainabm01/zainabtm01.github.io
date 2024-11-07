@@ -15,33 +15,24 @@
             direction: rtl;
             text-align: center;
         }
-
         header {
             background: #333;
             color: #fff;
             padding: 20px 0;
         }
-
         nav ul {
             list-style: none;
             padding: 0;
         }
-
         nav ul li {
             display: inline;
             margin: 0 15px;
         }
-
         nav ul li a {
             color: #fff;
             text-decoration: none;
             transition: color 0.3s;
         }
-
-        nav ul li a:hover {
-            color: #ffd700; /* لون عند التحويم */
-        }
-
         section {
             padding: 40px 20px;
             background: #fff;
@@ -49,26 +40,12 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
         footer {
             text-align: center;
             padding: 20px 0;
             background: #333;
             color: #fff;
         }
-
-        .social-links-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .social-links-container img {
-            width: 30px;
-            height: 30px;
-            margin: 0 10px;
-        }
-
-        /* تحسينات CSS إضافية */
         input, textarea {
             width: 80%;
             padding: 10px;
@@ -76,7 +53,6 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-
         button {
             padding: 10px 20px;
             background-color: #5cb85c;
@@ -86,9 +62,8 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
-
         button:hover {
-            background-color: #4cae4c; /* لون عند التحويم */
+            background-color: #4cae4c;
         }
     </style>
 </head>
@@ -105,54 +80,43 @@
         </nav>
     </header>
 
-    <section id="home">
-        <h2>الرئيسية</h2>
-        <p>نقدم لكم خدمات متميزة ورائعة في حل الواجبات، الاختبارات، والمشاريع الدراسية بسرعة وسهولة.</p>
-        <button onclick="welcomeMessage()">انقر هنا! 🎉</button>
-    </section>
-
-    <section id="about">
-        <h2>من نحن</h2>
-        <p>نحن منصة حلول متكاملة، ولدينا فريق متخصص لأداء المهام بدقة عالية. اكتشف كيف يمكننا مساعدتك في تحقيق النجاح الأكاديمي.</p>
-    </section>
-
-    <section id="services">
-        <h2>خدماتنا</h2>
-        <ul>
-            <li>حل الواجبات والكويزات</li>
-            <li>أبحاث ومشاريع دراسية</li>
-            <li>استشارات تعليمية</li>
-        </ul>
-    </section>
-
     <section id="contact">
         <h2>تواصل معنا</h2>
         <form id="contactForm">
-            <input type="text" placeholder="اسمك" required>
-            <input type="email" placeholder="بريدك الإلكتروني" required>
-            <textarea placeholder="رسالتك" required></textarea>
+            <input type="text" name="name" placeholder="اسمك" required>
+            <input type="email" name="email" placeholder="بريدك الإلكتروني" required>
+            <textarea name="message" placeholder="رسالتك" required></textarea>
             <button type="submit">أرسل الرسالة 📬</button>
         </form>
-        <div class="social-links-container" id="socialLinks">
-            <a href="https://twitter.com/zainabtm01?t=6WUTYi-Aka2ugQ8iRHvcJA&s=09" target="_blank"><img src="twitter.png" alt="Twitter" /></a>
-            <a href="https://www.instagram.com/zainabtm01?igsh=YzljYTk1ODg3Zg==" target="_blank"><img src="Instagram.png" alt="Instagram" /></a>
-            <a href="https://t.me/Quizat1t" target="_blank"><img src="telegram.png" alt="Telegram" /></a>
-            <a href="https://wa.me/+966566072682" target="_blank"><img src="Whatsapp.png" alt="Whatsapp" /></a>
-        </div>
     </section>
 
     <footer>
         <p>&copy; 2024 منصة العالمية - حلول الواجبات والمشاريع الدراسية</p>
     </footer>
 
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
-        function welcomeMessage() {
-            alert("مرحبًا بك في منصة العالمية! نحن هنا لمساعدتك.");
-        }
+        (function(){
+            emailjs.init("eacbcc8ad4d64009ac3175e7e480df81"); // مفتاح النشر الخاص بك
+        })();
 
         document.getElementById("contactForm").addEventListener("submit", function(event) {
             event.preventDefault();
-            alert("شكرًا على رسالتك! سنعود إليك قريبًا. 📬");
+
+            const name = document.querySelector('input[name="name"]').value;
+            const email = document.querySelector('input[name="email"]').value;
+            const message = document.querySelector('textarea[name="message"]').value;
+
+            emailjs.send("service_2600961317003066723", "template_ID", {
+                name: name,
+                email: email,
+                message: message
+            })
+            .then(function(response) {
+                alert("شكرًا على رسالتك! سنعود إليك قريبًا. 📬");
+            }, function(error) {
+                alert("فشل في إرسال الرسالة. حاول مرة أخرى.");
+            });
         });
     </script>
 </body>
