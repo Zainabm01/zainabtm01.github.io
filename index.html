@@ -18,6 +18,7 @@
             color: #fff;
             padding: 10px 0;
             text-align: center;
+            position: relative;
         }
         .container {
             max-width: 1200px;
@@ -31,13 +32,38 @@
             max-width: 100%;
             height: auto;
         }
-        .social-links {
-            margin-top: 20px;
+        .logo {
+            width: 150px; /* ضبط حجم الشعار */
         }
-        .social-links a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #333;
+        .social-links img {
+            width: 30px; /* تصغير أيقونات التواصل الاجتماعي */
+            margin: 0 5px;
+        }
+        .homework-img {
+            display: none; /* إخفاء جميع صور الواجبات افتراضيًا */
+        }
+        .whatsapp-icon {
+            width: 40px; /* حجم أيقونة الواتساب */
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+        }
+        .main-menu-icon {
+            width: 40px; /* حجم أيقونة القائمة الرئيسية */
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+        .social-links-container {
+            display: none; /* إخفاء حاوية الأيقونات في البداية */
+            position: absolute;
+            top: 50px; /* تعديل الموضع حسب الحاجة */
+            right: 10px;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Sakkal+Majalla&display=swap" rel="stylesheet"> <!-- إضافة رابط الخط -->
@@ -46,26 +72,27 @@
 
 <header>
     <h1>خدمات الطلاب</h1>
+    <img src="homework.png" alt="قائمة رئيسية" class="main-menu-icon" onclick="toggleSocialLinks()" />
+    <div class="social-links-container" id="socialLinks">
+        <a href="https://twitter.com/zainabtm01?t=6WUTYi-Aka2ugQ8iRHvcJA&s=09" target="_blank"><img src="twitter.png" alt="Twitter" /></a>
+        <a href="https://www.instagram.com/zainabtm01?igsh=YzljYTk1ODg3Zg==" target="_blank"><img src="Instagram.png" alt="Instagram" /></a>
+        <a href="https://t.me/Quizat1t" target="_blank"><img src="telegram.png" alt="Telegram" /></a>
+        <a href="https://wa.me/+966566072682" target="_blank"><img src="Whatsapp.png" alt="Whatsapp" /></a>
+    </div>
 </header>
 
 <div class="container">
-    <img src="logo.png" alt="شعار الموقع" />
+    <img src="logo.png" alt="شعار الموقع" class="logo" />
     
     <h2>خدماتنا</h2>
     <p>نقدم لكم هنا خدمات متميزة ورائعة في عمل الأبحاث والمشاريع وحل الواجبات والكويزات والاختبارات ونضمن لكم درجات كاملة في أي تخصص أو مقرر.</p>
     
-    <img src="homework.png" alt="الواجب 1" />
-    <img src="homework1.png" alt="الواجب 2" />
-    <img src="homework2.png" alt="الواجب 3" />
-    <img src="homework3.png" alt="الواجب 4" />
-    <img src="homework4.png" alt="الواجب 5" />
-    
-    <div class="social-links">
-        <h3>للتواصل</h3>
-        <a href="https://twitter.com/yourprofile"><img src="twitter.png" alt="Twitter" /></a>
-        <a href="https://instagram.com/yourprofile"><img src="Instagram.png" alt="Instagram" /></a>
-        <a href="https://t.me/yourprofile"><img src="telegram.png" alt="Telegram" /></a>
-        <a href="https://wa.me/yourprofile"><img src="Whatsapp.png" alt="Whatsapp" /></a>
+    <div id="homework-container">
+        <img src="homework.png" alt="الواجب 1" class="homework-img" id="homework1" />
+        <img src="homework1.png" alt="الواجب 2" class="homework-img" id="homework2" />
+        <img src="homework2.png" alt="الواجب 3" class="homework-img" id="homework3" />
+        <img src="homework3.png" alt="الواجب 4" class="homework-img" id="homework4" />
+        <img src="homework4.png" alt="الواجب 5" class="homework-img" id="homework5" />
     </div>
     
     <h2>من نحن</h2>
@@ -75,6 +102,39 @@
 <footer>
     <p>حقوق الطبع والنشر محفوظة لموقع زينب كويز © 2024</p>
 </footer>
+
+<!-- أيقونة واتساب -->
+<a href="https://wa.me/+966566072682">
+    <img src="Whatsapp.png" alt="Whatsapp" class="whatsapp-icon" />
+</a>
+
+<script>
+    // وظيفة لتغيير الصور بشكل متحرك
+    let currentIndex = 0;
+    const homeworkImages = document.querySelectorAll('.homework-img');
+    const totalImages = homeworkImages.length;
+
+    function showNextImage() {
+        homeworkImages[currentIndex].style.display = 'none'; // إخفاء الصورة الحالية
+        currentIndex = (currentIndex + 1) % totalImages; // الانتقال للصورة التالية
+        homeworkImages[currentIndex].style.display = 'block'; // عرض الصورة الجديدة
+    }
+
+    // إظهار أول صورة
+    homeworkImages[currentIndex].style.display = 'block';
+    // تغيير الصورة كل 3 ثوانٍ
+    setInterval(showNextImage, 3000);
+
+    // وظيفة لتبديل عرض الأيقونات الاجتماعية
+    function toggleSocialLinks() {
+        const socialLinksContainer = document.getElementById('socialLinks');
+        if (socialLinksContainer.style.display === 'none' || socialLinksContainer.style.display === '') {
+            socialLinksContainer.style.display = 'block'; // إظهار الأيقونات
+        } else {
+            socialLinksContainer.style.display = 'none'; // إخفاء الأيقونات
+        }
+    }
+</script>
 
 </body>
 </html>
