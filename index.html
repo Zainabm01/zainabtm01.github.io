@@ -3,140 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خدمات الطلاب</title>
-    <link rel="stylesheet" href="Styles.css"> <!-- إضافة رابط لملف CSS -->
+    <title>منصة العالمية لحلول الواجبات وعمل المشاريع</title>
+    <link rel="stylesheet" href="styles.css"> <!-- رابط لملف CSS -->
     <style>
         body {
             font-family: 'Sakkal Majalla', Arial, sans-serif; /* تغيير الخط */
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
-            direction: rtl; /* اتجاه النص من اليمين لليسار */
         }
+
         header {
             background: #333;
             color: #fff;
             padding: 10px 0;
             text-align: center;
-            position: relative;
         }
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        section {
             padding: 20px;
             background: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+            border-radius: 5px; /* إضافة زوايا مستديرة */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
         }
-        img {
-            max-width: 100%;
-            height: auto;
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #333;
+            color: #fff;
         }
-        .logo {
-            width: 75px; /* تصغير حجم الشعار إلى نصف حجمه */
-            vertical-align: middle; /* محاذاة الشعار مع النص */
-        }
-        .site-name {
-            display: inline; /* عرض اسم الموقع بجوار الشعار */
-            font-size: 24px; /* حجم خط اسم الموقع */
-            margin-left: 10px; /* مسافة بين الشعار واسم الموقع */
-        }
-        .social-links img {
-            width: 30px; /* حجم الأيقونات ليكون مستطيلًا صغيرًا */
-            height: 20px; /* ضبط الارتفاع */
-            margin: 5px 2px; /* مسافة بين الأيقونات */
-            border-radius: 5px; /* زوايا مستديرة للأيقونات */
-        }
-        .homework-img {
-            display: none; /* إخفاء جميع صور الواجبات افتراضيًا */
-            width: 50%; /* تصغير صور الواجبات إلى نصف حجمها */
-        }
-        .whatsapp-icon {
-            width: 40px; /* حجم أيقونة الواتساب */
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-        }
-        .main-menu-icon {
-            width: 40px; /* حجم أيقونة القائمة الرئيسية */
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-        }
+
         .social-links-container {
-            display: flex; /* استخدام flexbox لترتيب الأيقونات أفقيًا */
-            justify-content: center; /* محاذاة المركز */
-            margin-top: 20px; /* مسافة فوق الأيقونات */
+            text-align: center; /* محاذاة المركز للأيقونات */
+            margin-top: 10px; /* مسافة فوق الأيقونات */
+        }
+
+        .social-links-container img {
+            width: 30px; /* حجم الأيقونات */
+            height: 20px; /* ارتفاع الأيقونات */
+            margin: 0 5px; /* مسافة بين الأيقونات */
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Sakkal+Majalla&display=swap" rel="stylesheet"> <!-- إضافة رابط الخط -->
 </head>
 <body>
+    <header>
+        <h1>منصة العالمية لحلول الواجبات وعمل المشاريع 🌍</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header>
-    <img src="logo.png" alt="شعار الموقع" class="logo" />
-    <span class="site-name">خدمات الطلاب</span>
-    <img src="menu.png" alt="قائمة رئيسية" class="main-menu-icon" onclick="toggleSocialLinks()" />
-</header>
+    <section id="home">
+        <h2>الرئيسية</h2>
+        <p>نقدم لكم هنا خدمات متميزة ورائعة في عمل الأبحاث والمشاريع وحل الواجبات والكويزات.</p>
+        <button onclick="welcomeMessage()">انقر هنا! 🎉</button>
+    </section>
 
-<div class="container">
-    <h2>خدماتنا</h2>
-    <p>نقدم لكم هنا خدمات متميزة ورائعة في عمل الأبحاث والمشاريع وحل الواجبات والكويزات والاختبارات ونضمن لكم درجات كاملة في أي تخصص أو مقرر.</p>
-    
-    <div id="homework-container">
-        <img src="homework.png" alt="الواجب 1" class="homework-img" id="homework1" />
-        <img src="homework1.png" alt="الواجب 2" class="homework-img" id="homework2" />
-        <img src="homework2.png" alt="الواجب 3" class="homework-img" id="homework3" />
-    </div>
+    <section id="about">
+        <h2>من نحن</h2>
+        <p>نحن منصة حلول متكاملة، لدينا فريق متخصص لأداء المهام بكل دقة.</p>
+    </section>
 
-    <div class="social-links-container" id="socialLinks">
-        <a href="https://twitter.com/zainabtm01?t=6WUTYi-Aka2ugQ8iRHvcJA&s=09" target="_blank"><img src="twitter.png" alt="Twitter" /></a>
-        <a href="https://www.instagram.com/zainabtm01?igsh=YzljYTk1ODg3Zg==" target="_blank"><img src="Instagram.png" alt="Instagram" /></a>
-        <a href="https://t.me/Quizat1t" target="_blank"><img src="telegram.png" alt="Telegram" /></a>
-        <a href="https://wa.me/+966566072682" target="_blank"><img src="Whatsapp.png" alt="Whatsapp" /></a>
-    </div>
-    
-    <h2>من نحن</h2>
-    <p>نحن منصة حلول متكاملة، لدينا فريق متخصص لأداء المهام بكل دقة. لا تتردد في إرسال واجباتك إلينا، فنحن هنا من أجل مساعدتكم على أداء وإنجاز مهامكم الدراسية لتحصيل أعلى التقديرات والدرجات.</p>
-</div>
+    <section id="services">
+        <h2>خدماتنا</h2>
+        <ul>
+            <li>حل الواجبات والكويزات</li>
+            <li>أبحاث ومشاريع دراسية</li>
+            <li>استشارات تعليمية</li>
+        </ul>
+    </section>
 
-<footer>
-    <p>حقوق الطبع والنشر محفوظة لموقع زينب كويز © 2024</p>
-</footer>
+    <section id="contact">
+        <h2>تواصل معنا</h2>
+        <form id="contactForm">
+            <input type="text" placeholder="اسمك" required>
+            <input type="email" placeholder="بريدك الإلكتروني" required>
+            <textarea placeholder="رسالتك" required></textarea>
+            <button type="submit">أرسل الرسالة 📬</button>
+        </form>
+        <div class="social-links-container" id="socialLinks">
+            <a href="https://twitter.com/zainabtm01?t=6WUTYi-Aka2ugQ8iRHvcJA&s=09" target="_blank"><img src="twitter.png" alt="Twitter" /></a>
+            <a href="https://www.instagram.com/zainabtm01?igsh=YzljYTk1ODg3Zg==" target="_blank"><img src="Instagram.png" alt="Instagram" /></a>
+            <a href="https://t.me/Quizat1t" target="_blank"><img src="telegram.png" alt="Telegram" /></a>
+            <a href="https://wa.me/+966566072682" target="_blank"><img src="Whatsapp.png" alt="Whatsapp" /></a>
+        </div>
+    </section>
 
-<!-- أيقونة واتساب -->
-<a href="https://wa.me/+966566072682">
-    <img src="Whatsapp.png" alt="Whatsapp" class="whatsapp-icon" />
-</a>
+    <footer>
+        <p>&copy; 2024 منصة العالمية لحلول الواجبات وعمل المشاريع</p>
+    </footer>
 
-<script>
-    // وظيفة لتغيير الصور بشكل متحرك
-    let currentIndex = 0;
-    const homeworkImages = document.querySelectorAll('.homework-img');
-    const totalImages = homeworkImages.length;
-
-    function showNextImage() {
-        homeworkImages[currentIndex].style.display = 'none'; // إخفاء الصورة الحالية
-        currentIndex = (currentIndex + 1) % totalImages; // الانتقال للصورة التالية
-        homeworkImages[currentIndex].style.display = 'block'; // عرض الصورة الجديدة
-    }
-
-    // إظهار أول صورة
-    homeworkImages[currentIndex].style.display = 'block';
-    // تغيير الصورة كل 3 ثوانٍ
-    setInterval(showNextImage, 3000);
-
-    // وظيفة لتبديل عرض الأيقونات الاجتماعية
-    function toggleSocialLinks() {
-        const socialLinksContainer = document.getElementById('socialLinks');
-        if (socialLinksContainer.style.display === 'none' || socialLinksContainer.style.display === '') {
-            socialLinksContainer.style.display = 'flex'; // إظهار الأيقونات
-        } else {
-            socialLinksContainer.style.display = 'none'; // إخفاء الأيقونات
+    <script>
+        function welcomeMessage() {
+            alert("مرحبًا بك في منصة العالمية! نحن هنا لمساعدتك.");
         }
-    }
-</script>
 
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("شكرًا على رسالتك! سنعود إليك قريبًا. 📬");
+        });
+    </script>
 </body>
 </html>
