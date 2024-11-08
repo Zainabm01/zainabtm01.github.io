@@ -39,30 +39,11 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        input, textarea {
-            width: 80%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #5cb85c;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #4cae4c;
-        }
         footer {
             text-align: center;
             background: #333;
             color: #fff;
-            padding: 20px 0;
+            padding: 10px 0; /* تقليل ارتفاع التذييل */
         }
         .social-icons {
             margin: 10px 0;
@@ -71,14 +52,14 @@
             align-items: center;
         }
         .social-icons a {
-            margin: 0 10px;
+            margin: 0 15px; /* زيادة المسافة بين الأيقونات */
         }
         .social-icons img {
-            width: 24px;
-            height: 24px;
+            width: 40px; /* زيادة حجم الأيقونات */
+            height: 40px; /* زيادة حجم الأيقونات */
         }
         .copyright {
-            margin-top: 10px;
+            margin-top: 5px; /* تقليل المسافة بين النص وأيقونات التواصل */
         }
     </style>
 </head>
@@ -90,7 +71,6 @@
                 <li><a href="#home">الرئيسية</a></li>
                 <li><a href="#about">من نحن</a></li>
                 <li><a href="#services">خدماتنا</a></li>
-                <li><a href="#contact">تواصل معنا</a></li>
             </ul>
         </nav>
     </header>
@@ -108,16 +88,6 @@
     <section id="services">
         <h2>خدماتنا</h2>
         <p>نقدم خدمات متنوعة تشمل الواجبات، المشاريع، والدروس الخصوصية.</p>
-    </section>
-
-    <section id="contact">
-        <h2>تواصل معنا</h2>
-        <form id="contactForm" action="https://formspree.io/f/zainabtm01" method="POST">
-            <input type="text" name="name" placeholder="اسمك" required>
-            <input type="email" name="email" placeholder="بريدك الإلكتروني" required>
-            <textarea name="message" placeholder="رسالتك" required></textarea>
-            <button type="submit">أرسل الرسالة 📬</button>
-        </form>
     </section>
 
     <footer>
